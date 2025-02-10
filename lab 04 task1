@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class Book{
+  string name;
+  double price;
+  int stock;
+  public:
+  Book(){
+      name="unknown";
+      price=0.0;
+      stock=30;
+  }
+  void updatebook(string newname,double newprice,int newstock){
+     name=newname;
+     price=newprice;
+     stock=newstock;
+  }
+  void simulatepurchase(int quantity){
+      int stock=30;
+      int remaining=stock -quantity;
+      if(remaining<5){
+          cout<<"Low Stock Warning"<<endl;
+      }
+      else{
+          cout<<"Remaining stock is "<<remaining<<endl;
+      }
+  }
+  void display(){
+      cout<<"Book name is "<<name<<" and is about "<<price<<" and "<<stock<<" is left"<<endl;
+  }
+};
+
+int main(){
+    Book b1;
+    b1.display();
+    b1.updatebook("atomic habbits",344.0,21);
+    b1.display();
+    b1.simulatepurchase(10);
+}
