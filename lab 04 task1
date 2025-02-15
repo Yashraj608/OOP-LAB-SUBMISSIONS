@@ -5,29 +5,49 @@ class Book{
   double price;
   int stock;
   public:
-  Book(){
+  Book(){ //default constructor
       name="unknown";
       price=0.0;
       stock=30;
   }
+  
+  
   void updatebook(string newname,double newprice,int newstock){
      name=newname;
      price=newprice;
      stock=newstock;
   }
+  
   void simulatepurchase(int quantity){
-      int stock=30;
       int remaining=stock -quantity;
-      if(remaining<5){
-          cout<<"Low Stock Warning"<<endl;
+      if(quantity>stock){
+          cout<<"Sorry! Not enough stock available"<<endl;
       }
-      else{
-          cout<<"Remaining stock is "<<remaining<<endl;
+      else if (remaining <5){
+          cout<<"Warning ! Low Stock."<<remaining<<endl;
       }
+      else {
+      	stock-=quantity;
+      	cout<<"Remaining Stock is "<<remaining<<endl;
+	  }
   }
+  
   void display(){
-      cout<<"Book name is "<<name<<" and is about "<<price<<" and "<<stock<<" is left"<<endl;
+      cout<<"Book name is "<<name<<" and is about "<<price<<" rupees and "<<stock<<" is left"<<endl;
   }
+  
+  void applydiscount(int quantity,double price){
+  	if(quantity>5 && quantity<10){
+  		price =price-((price/100)*5);
+  		cout<<"Price for "<<quantity<<" books after applying 5% discount is "<<price<<endl;
+	  }
+	  else if(quantity>10){
+	  	price=price-((price/100)*10);
+	  	cout<<"Price for "<<quantity<<" books after applying 10% discount is "<<price<<endl;
+	  	
+	  }	
+  }
+  
 };
 
 int main(){
@@ -35,5 +55,7 @@ int main(){
     b1.display();
     b1.updatebook("atomic habbits",344.0,21);
     b1.display();
+    b1.simulatepurchase(5);
     b1.simulatepurchase(10);
+    b1.simulatepurchase(6);
 }
