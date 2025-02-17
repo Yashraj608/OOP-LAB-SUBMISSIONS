@@ -35,19 +35,6 @@ class Book{
   void display(){
       cout<<"Book name is "<<name<<" and is about "<<price<<" rupees and "<<stock<<" is left"<<endl;
   }
-  
-  void applydiscount(int quantity,double price){
-  	if(quantity>5 && quantity<10){
-  		price =price-((price/100)*5);
-  		cout<<"Price for "<<quantity<<" books after applying 5% discount is "<<price<<endl;
-	  }
-	  else if(quantity>10){
-	  	price=price-((price/100)*10);
-	  	cout<<"Price for "<<quantity<<" books after applying 10% discount is "<<price<<endl;
-	  	
-	  }	
-  }
-  
 };
 
 int main(){
