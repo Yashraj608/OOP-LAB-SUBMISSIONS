@@ -37,13 +37,9 @@ public:
 int main() {
     string testResults1[5] = {"Positive","Negative","Positive","Negative","Positive"};
 
-    Patient p1("John Doe",101,testResults1);
+    Patient p1("yash raj",101,testResults1);
     Patient p2 = p1;
-
-    cout<<"Original Patient Record:"<<endl;
     p1.display();
-
-    cout<<"Copied Patient Record:"<<endl;
     p2.display();
 
     return 0;
