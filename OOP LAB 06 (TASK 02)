@@ -30,15 +30,15 @@ class car : public vehicle{
 		
 };
 
-class Electriccar : public car{
+class Electriccar : public vehicle{
 	protected:
 		int batterylife;
 		public:
-			Electriccar(int batterylife,string brand ,int speed,int seats):car(seats,brand,speed){
+			Electriccar(int batterylife,string brand ,int speed):vehicle(brand,speed){
 				this->batterylife=batterylife;
 			}
 			void display() override{
-				car::display();
+				vehicle::display();
 				cout<<"Battery life is: "<<batterylife<<endl;
 			}
 };
@@ -54,7 +54,7 @@ int main(){
 	cout<<"Enter the battery life of Electric car"<<endl;
 	cin>>batterylife;
 	
-	Electriccar c1(batterylife,brand,speed,seats);
+	Electriccar c1(batterylife,brand,speed);
 	c1.display();
 	return 0;
 }
