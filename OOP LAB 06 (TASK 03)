@@ -16,7 +16,7 @@ class person{
 			}
 };
 
-class Teacher : public person{
+class Teacher : virtual public person{
 	protected: 
 	string subject;
 	public:
@@ -24,34 +24,35 @@ class Teacher : public person{
 			this->subject=subject;
 		}
 		void display() override{
-			person::display();
 			cout<<"Subject: "<<subject<<endl;
 		}
 };
-class Researcher :public Teacher{
+class Researcher :virtual public person{
 	protected:
 		string researcharea;
 		public:
-			Researcher(string researcharea,string subject,string name,int age):Teacher(subject,name,age){
+			Researcher(string researcharea,string name,int age):person(name,age){
 				this->researcharea=researcharea;
 			}
 			void display() override{
-				Teacher::display();
 				cout<<"Research Area is: "<<researcharea<<endl;
 			}
 };
 
-class professor: public Researcher{
+class professor: public Teacher,public Researcher{
 	protected:
 		int publications;
 		public:
-			professor(int publications,string researcharea,string subject,string name,int age):Researcher(researcharea,subject,name,age){
-				this->publications=publications;
-			}
+			professor(int publications, string researchArea, string subject, string name, int age)
+        : person(name, age), Teacher(subject, name, age), Researcher(researchArea, name, age) {
+        this->publications = publications;
+    }
 			
-			void display() override{
-				Researcher::display();
-				cout<<"No: of Publications :"<<publications<<endl;
+                void display() override{
+	person::display();
+	cout<<"Subject: "<<subject<<endl;
+        cout<<"Research Area: "<<researcharea<<endl;
+        cout<<"No: of Publications: "<<publications<<endl;
 			}
 };
 int main(){
