@@ -1,6 +1,9 @@
 //book.h//
 #ifndef BOOK_H
 #define BOOK_H
+#include<iostream>
+#include<string>
+using namespace std;
 
 class Book{
 	private:
@@ -15,34 +18,37 @@ class Book{
 
 
 //book.cpp//
-#include"book.h"
+#include"Book.h"
+#include<iostream>
+using namespace std;
 
 Book::Book(string t , string a, string i){
-	this->t=t;
-	this->a=a;
-	this->i=i;
+	this->title=t;
+	this->author=a;
+	this->ISBN=i;
 }
 
 string Book::gettitle() const{
 	return title;
 }
 
-string Book::getauthor()const{
+string Book::getAuthor()const{
 	return author;
 }
 
 string Book::getISBN()const{
-	retrun ISBN;
+	return ISBN;
 }
 
 
 //main.cpp//
 #include<iostream>
-#include"book.h"
+#include"Book.cpp"
+
 using namespace std;
 int main(){
-	Book("crawdads","yash raj","110983-9");
-	cout<<"Title : "<<title<<endl;
-	cout<<"Author : "<<author<<endl;
-	cout<<"ISBN : "<<ISBN<<endl;
+	Book my("crawdads","yash raj","110983-9");
+	cout<<"Title : "<<my.gettitle()<<endl;
+	cout<<"Author : "<<my.getAuthor()<<endl;
+	cout<<"ISBN : "<<my.getISBN()<<endl;
 }
