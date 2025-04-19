@@ -1,0 +1,48 @@
+//book.h//
+#ifndef BOOK_H
+#define BOOK_H
+
+class Book{
+	private:
+	string title,author,ISBN;
+	public:
+		Book(string t,string a, string i);
+		string gettitle()const;
+		string getAuthor()const;
+		string getISBN()const;
+};
+#endif
+
+
+//book.cpp//
+#include"book.h"
+
+Book::Book(string t , string a, string i){
+	this->t=t;
+	this->a=a;
+	this->i=i;
+}
+
+string Book::gettitle() const{
+	return title;
+}
+
+string Book::getauthor()const{
+	return author;
+}
+
+string Book::getISBN()const{
+	retrun ISBN;
+}
+
+
+//main.cpp//
+#include<iostream>
+#include"book.h"
+using namespace std;
+int main(){
+	Book("crawdads","yash raj","110983-9");
+	cout<<"Title : "<<title<<endl;
+	cout<<"Author : "<<author<<endl;
+	cout<<"ISBN : "<<ISBN<<endl;
+}
