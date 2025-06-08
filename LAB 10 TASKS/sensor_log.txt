@@ -1,0 +1,3 @@
+Sensor 3: 228-0
+Sensor 4: 3643-0
+Sensor 5: 0038rn

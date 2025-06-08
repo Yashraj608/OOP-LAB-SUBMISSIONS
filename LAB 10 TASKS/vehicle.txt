@@ -1,0 +1,4 @@
+AutonomousCar,AC101,RoboTaxi,2023,SW:4.5,CERT-AI
+ElectricVehicle,EV2O2,Voltz,2022,Battery:150,CERT-ECO
+
+HybridTruck,HT303,GreenHauler,2021,Cardo:5000|Battery:75,CERT-HYBRID
